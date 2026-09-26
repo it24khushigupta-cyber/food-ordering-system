@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 40px;
+    color: #222;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+h1 {
+    color: #d84315;
+}
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+.menu-table th, .menu-table td {
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: left;
+}
+.menu-table th {
+    background: #fff3e0;
+}
+.qty-input {
+    width: 60px;
+    padding: 4px;
+}
+button {
+    margin-top: 20px;
+    background: #d84315;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background: #bf360c;
+}
+a {
+    color: #d84315;
+}

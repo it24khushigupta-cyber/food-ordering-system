@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmed</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1 id="confirmation-heading">✅ Order Placed Successfully!</h1>
+        <p>Order ID: <span th:text="${order.id}">1</span></p>
+        <p>Status: <span th:text="${order.status}">PLACED</span></p>
+        <p>Total Amount: ₹<span id="order-total" th:text="${order.totalAmount}">0.00</span></p>
+
+        <h3>Items:</h3>
+        <ul>
+            <li th:each="i : ${order.items}">
+                <span th:text="${i.foodItem.name}">Item</span> x
+                <span th:text="${i.quantity}">1</span> = ₹<span th:text="${i.price}">0.00</span>
+            </li>
+        </ul>
+
+        <a th:href="@{/menu}">Back to Menu</a>
+    </div>
+</body>
+</html>

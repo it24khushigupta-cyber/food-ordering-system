@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu - Food Ordering System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>🍔 Our Menu</h1>
+        <p><a th:href="@{/orders}">View My Orders</a></p>
+
+        <form th:action="@{/cart/checkout}" method="post">
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Price (₹)</th>
+                        <th>Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item : ${items}" id="menu-item-row">
+                        <td th:text="${item.name}" class="item-name">Item Name</td>
+                        <td th:text="${item.description}">Description</td>
+                        <td th:text="${item.category}">Category</td>
+                        <td th:text="${item.price}">0.00</td>
+                        <td>
+                            <input type="number" min="0" value="0"
+                                   th:name="'qty_' + ${item.id}"
+                                   class="qty-input" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" id="place-order-btn">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>
