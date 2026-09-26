@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        PATH = "/opt/homebrew/bin:/usr/local/bin:${env.PATH}"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
         IMAGE_NAME = 'yourdockerhubuser/food-ordering-system'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
