@@ -7,12 +7,7 @@ pipeline {
         IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/yourusername/food-ordering-system.git'
-            }
-        }
+    
 
         stage('Build with Maven') {
             steps {
