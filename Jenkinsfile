@@ -2,13 +2,12 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials') // configure in Jenkins
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
         IMAGE_NAME = 'yourdockerhubuser/food-ordering-system'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
 
-    
-
+    stages {
         stage('Build with Maven') {
             steps {
                 sh 'mvn clean compile'
@@ -47,7 +46,7 @@ pipeline {
             junit '**/target/surefire-reports/*.xml'
         }
         success {
-            echo 'Pipeline completed successfully — image pushed to Docker Hub.'
+            echo 'Pipeline completed successfully.'
         }
         failure {
             echo 'Pipeline failed — check console output above.'
