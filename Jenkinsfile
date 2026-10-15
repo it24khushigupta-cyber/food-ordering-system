@@ -1,6 +1,8 @@
 pipeline {
     agent any
 
+    triggers { githubPush() }
+    
     environment {
         PATH = "/opt/homebrew/bin:/usr/local/bin:${env.PATH}"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
