@@ -103,3 +103,5 @@ food-ordering-system/
 - Add a payment simulation step before order confirmation
 - Add pagination/search/filtering to the menu
 - Swap H2 for MySQL/Postgres for a persistent production setup
+
+Webhook test from Mac
