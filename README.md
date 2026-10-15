@@ -105,3 +105,4 @@ food-ordering-system/
 - Swap H2 for MySQL/Postgres for a persistent production setup
 
 Webhook test from Mac
+- Webhook test: pipeline auto-triggered by GitHub push
